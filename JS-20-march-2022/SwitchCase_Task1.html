@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head><title>grades symbols</title></head>
+<body>
+<h1>Calculating the grades with symbols
+</h1> <hr>
+   Enter the score: <br>
+    <input type="text" id="grade" name="grade" /> <br> <br>
+    <input style="background-color: rgb(14, 122, 56); color: aliceblue;" type="submit" id="submit" value="calculate" onclick="CalcGrades(this);" /> <br> <br>
+
+  Result:  <p id='grades'></p>
+</body>
+
+</html>
+<script>
+
+    function CalcGrades() {
+        var mark;
+        var inputVAL = document.getElementById('grade').value
+        switch (true) {
+            case (inputVAL >= 90 && inputVAL <= 100):
+                mark = 'A';
+                break;
+            case (inputVAL >= 80 && inputVAL <= 89):
+                mark = 'B';
+                break;
+            case (inputVAL >= 70 && inputVAL <= 79):
+                mark = 'C';
+                break;
+            case (inputVAL >= 60 && inputVAL <= 69):
+                mark = 'D';
+                break;
+            case (inputVAL >= 50 && inputVAL <= 59):
+                mark = 'E';
+                break;
+            case (inputVAL >= 0 && inputVAL <= 49):
+                mark = 'Fall';
+                break;
+            default:
+                mark = 'incorrect value,try again';
+        }
+        document.getElementById('grades').innerHTML = mark;
+
+
+    }
+
+
+
+
+</script>
+
+</html>

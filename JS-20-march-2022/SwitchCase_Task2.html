@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head><title>Days</title></head>
+<body>
+<h1>Week days
+</h1> <hr>
+   Enter the number (1-7): <br>
+    <input type="text" id="day" name="day" /> <br> <br>
+    <input style="background-color: rgb(110, 156, 128); color: aliceblue;"
+     type="submit" id="submit" value="Click" onclick="calc(this);" /> <br> <br>
+
+  Result:<p id='dayName'></p>
+</body>
+
+</html>
+<script>
+
+    function calc() {
+        var result;
+        var inputVAL = document.getElementById('day').value
+        switch (inputVAL) {
+            case '1':
+            result = 'Saturday';
+                break;
+                case '2':
+                result = 'Sunday';
+                break;
+                case '3':
+                result = 'Monday';
+                break;
+                case '4':
+                result = 'Tuseday';
+                break;
+                case '5':
+                result = 'Wedensday';
+                break;
+                case '6':
+                result = 'Thursday';
+                break;
+                case '7':
+                result = 'Friday';
+                break;
+         
+            default:
+            result = 'incorrect value,try again';
+        }
+        document.getElementById('dayName').innerHTML = result;
+
+
+    }
+
+
+
+
+</script>
+
+</html>
