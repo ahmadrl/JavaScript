@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Password (min 6 characters): 
+        <input id="letters" onkeydown="write()"  placeholder="password" type="text">
+     </span>
+     <div  id="textSH" style="visibility: hidden; color: red;"  >Too short</div>
+
+     <br><br>
+
+    <span>Repeat password: <input onkeydown="match()" id="rePass" placeholder="re-type password" type="text"> </span>
+    <span style="visibility: hidden; color: red;" id="match">Passwords don't match</span>
+     <br>
+    <input id="btn" type="button" value="Submit" style="visibility: hidden;">
+
+    <script>
+         var num1=document.getElementById('letters').innerHTML;
+         var num2=document.getElementById('rePass').innerHTML;
+    
+    
+        function write()
+        {
+            var x= document.getElementById('textSH');
+           
+    if (num1.length < 6)
+    {
+        x.style.visibility='visible';
+    }
+    else { x.style.visibility='hidden'}
+    }
+
+function match(){
+    if (num1.value != num2.value)
+    {document.getElementById('match').style.visibility='visible';
+    
+}
+    else  if (num1.value === num2.value)
+    document.getElementById('match').style.visibility='hidden';
+    document.getElementById('btn').style.visibility='visible';
+
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select style="margin:30px 0px 0px 30px; width: 150px;background-color: rgb(165, 210, 236)" class="custom-select" id="font" onchange="font()">
+        <option value="arial">Arial</option>
+        <option value="corbel">Corbel</option>
+    </select>
+
+    <select style="margin:30px 0px 0px 30px; width: 150px;background-color: rgb(165, 210, 236);" class="custom-select" id="size" onchange="fontSize()">
+        <option value="20px">20px</option>
+        <option value="40px">40px</option>
+        
+    </select>
+
+<div style="margin:30px 0px 0px 30px ;">
+  <input style="margin-left: 15px;"  class=" custom-checkbox" type="checkbox" onclick="checkbox(1)" id="Italic" name="Italic" value="Italic">
+  <label for="Italic">Italic</label>
+  <input  type="checkbox" onclick="checkbox(2)" value="Bold">
+  <label for="Bold">Bold</label>
+  <input type="checkbox" onclick="checkbox(3)"  value="Underline">
+  <label for="Underline">Underline</label> <br><br>
+</div>
+<textarea placeholder="type here..." style="margin-left: 30px; " rows="5" cols="60"></textarea>
+
+  <script>
+     
+function checkbox(num){
+    var Italic,Bold,Underline=false;
+    if(num == 1){
+       if(!Italic){
+        document.querySelector("textarea").style.fontStyle = "Italic";
+        Italic = true;
+       }else{
+        document.querySelector("textarea").style.fontStyle = "normal";
+        Italic = false;
+       }
+    }else if(num == 2){
+        if(!Bold){
+        document.querySelector("textarea").style.fontWeight = "Bold";
+        Bold = true;
+        }else{
+        document.querySelector("textarea").style.fontWeight = "normal";
+        Bold = false;
+        }
+    }else if(num == 3){
+        if(!Underline){
+        document.querySelector("textarea").style.textDecoration = "Underline"; 
+        Underline = true;
+        }else{
+        document.querySelector("textarea").style.textDecoration = "none"; 
+        Underline = false;
+        }
+       
+    }
+}
+
+
+function font(){
+   var x = document.getElementById('font').value;
+
+   if(x == "arial"){
+    document.querySelector("textarea").style.fontFamily = "arial";
+   }else if(x == "corbel"){
+    document.querySelector("textarea").style.fontFamily = "corbel";
+   }
+}
+
+
+function fontSize(){
+    var x = document.getElementById('size').value;
+    console.log(3);
+   if(x == "20px"){
+       console.log(3);
+    document.querySelector("textarea").style.fontSize = "20px";
+   }else if(x == "40px"){
+    document.querySelector("textarea").style.fontSize = "40px";
+   }
+}
+  </script>
+</body>
+</html>
