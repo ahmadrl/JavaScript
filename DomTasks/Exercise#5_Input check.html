@@ -5,46 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <span>Password (min 6 characters): 
-        <input id="letters" onkeydown="write()"  placeholder="password" type="text">
-     </span>
-     <div  id="textSH" style="visibility: hidden; color: red;"  >Too short</div>
 
-     <br><br>
+    <body>
+   
+        <div>Password (min 6 characters):
+        <input type="password" name="password1" 
+            id="password1" size="12" placeholder="Password" onkeyup="check()">
+        
+            <div id="checkP1" style="color: red;"></div>
+        </div>
+ <br><br>
+ <div>  Repeat password:
+        <input type="password" name="password2" id="password2" 
+            size="12" placeholder="re-type Password" onkeyup="check()">
+        
+            <div id="checkP2" style="color: red;">
+        </div></div>
+   <br><br>
 
-    <span>Repeat password: <input onkeydown="match()" id="rePass" placeholder="re-type password" type="text"> </span>
-    <span style="visibility: hidden; color: red;" id="match">Passwords don't match</span>
-     <br>
-    <input id="btn" type="button" value="Submit" style="visibility: hidden;">
-
-    <script>
-         var num1=document.getElementById('letters').innerHTML;
-         var num2=document.getElementById('rePass').innerHTML;
-    
-    
-        function write()
-        {
-            var x= document.getElementById('textSH');
-           
-    if (num1.length < 6)
-    {
-        x.style.visibility='visible';
-    }
-    else { x.style.visibility='hidden'}
-    }
-
-function match(){
-    if (num1.value != num2.value)
-    {document.getElementById('match').style.visibility='visible';
-    
-}
-    else  if (num1.value === num2.value)
-    document.getElementById('match').style.visibility='hidden';
-    document.getElementById('btn').style.visibility='visible';
-
-}
-    </script>
+<input type="submit" value="Submit" id="submit"/>
 </body>
+
+      <script>
+        function check() {
+            var pw1 = document.getElementById("password1").value;
+            var pw2 = document.getElementById("password2").value;
+            var pd1 = document.getElementById("checkP1");
+            var pd2 = document.getElementById("checkP2");
+
+            var test = false;
+            if (pw1.length > 0) {
+                if (pw1.length < 6) {
+                    pd1.innerHTML = "Too short";
+                    test = true;
+                }
+                else {
+                    pd1.innerHTML = "";
+                }
+                if (pw2.length > 0 && pw1 !== pw2) {
+                    pd2.innerHTML = "passwords don't match";
+                    test = true;
+                }
+                else {
+                    pd2.innerHTML = "";
+                }
+            }
+
+            else {
+                pd1.innerHTML = "";
+            }
+
+            var btn = document.getElementById("submit");
+            if (pw1.length > 0 && pw2.length > 0 && !test) {
+                btn.style.display = "";
+            }
+            else {
+                btn.style.display = "none";
+            }
+        }
+
+        window.onload = function () {
+            document.getElementById("submit").style.display = "none";
+        }
+    </script>
+</head>
+
 </html>
