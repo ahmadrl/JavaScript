@@ -85,7 +85,6 @@
     =>  {a: 1, cat: 3}
     */
     function selectFromObject(arr, obj) {
-        const newArray = [];
         for (i = 0; i < arr.length; i++) {
             for (variable in obj) {
 
