@@ -160,8 +160,8 @@ Ex: subtract(5); => 5 - 4 - 3 - 2 - 1 - 0 => -5
             }
             return arr.join(',');
         }
-        var f = prompt('task8: enter first number for return the numbers between two numbers(ex: numberBetweenUs(2,8) => "3, 4, 5, 6, 7"numberBetweenUs(1,3) => "2"):');
-        var s = prompt('task8: enter second number for return the numbers between two numbers numberBetweenUs(2,8) => "3, 4, 5, 6, 7"numberBetweenUs(1,3) => "2":');
+        var f = parseFloat( prompt('task8: enter first number for return the numbers between two numbers(ex: numberBetweenUs(2,8) => "3, 4, 5, 6, 7"numberBetweenUs(1,3) => "2"):'));
+        var s = parseFloat( prompt('task8: enter second number for return the numbers between two numbers numberBetweenUs(2,8) => "3, 4, 5, 6, 7"numberBetweenUs(1,3) => "2":'));
         alert(numberBetweenUs(f, s));
 
 
