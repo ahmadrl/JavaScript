@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     /*
+        5
+        Create a function called repeatStr2
+        that takes 2 string parameters,
+        and return the first string number time
+        (of the lenght of the secend string) with space betweeen it
+        ** Important: the continue condition should be [somthing!== 0]
+        ** Important: You should't have extra space at the end
+        Ex: repeatStr2("ro","cc"); => "ro ro"
+        Ex: repeatStr2("ro","fff"); => "ro ro ro"
+        */
+        function repeatStrr2(str, str2) {
+            let arr = [];
+            let arr2 = str2.length;
+
+            while (arr2 != 0 && str != null) {
+                arr.push(str);
+
+                arr2--;
+
+            }
+            return arr.join(" ");
+        }
+        var word1 = prompt('enter word for return the string number time with space:(ex:repeatStr2("ro","cc"); => "ro ro")');
+        var strL = prompt('enter word for return the string characters time with space:');
+        alert(repeatStrr2(word1, strL));
+        </script>
+</body>
+</html>

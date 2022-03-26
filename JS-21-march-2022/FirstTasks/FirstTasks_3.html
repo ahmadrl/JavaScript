@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+      /*
+       3. Write a JavaScript conditional statement to sort three numbers. 
+      Display an alert box to show the result
+      */
+  function sorting (a,b,c)
+  {
+    var arr2=[];
+    if(a>b&&a>c&&b>c)
+    {
+        arr2.push(a,b,c);
+    }
+    else if(a>b&&a>c&&c>b)
+    {
+        arr2.push(a,c,b);
+    }
+    else if(b>a&&b>c&&a>c)
+    {
+        arr2.push(b,a,c);
+    }
+    else if(b>a&&b>c&&c>a)
+    {
+        arr2.push(b,c,a);
+    }
+    
+    else if(c>a&&c>b&&a>b)
+    {
+        arr2.push(c,a,b);
+    }
+    else if(c>a&&c>b&&b>a)
+    {
+        arr2.push(c,b,a);
+    }
+    return arr2;
+    }
+    alert('sort three numbers descending: '+sorting( 0, -1, 4 ));
+    </script>  
+</body>
+</html>
