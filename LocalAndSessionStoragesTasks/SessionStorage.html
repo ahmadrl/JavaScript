@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal data </title>
+
+</head>
+<body>
+  <table id="tab" border="1px" style="position: fixed; margin-left: 620px; display:none; "  align="center">
+    <thead>
+      <th style="width: max-content; height: 250px;" id="pic" colspan="9">
+      </th>
+    </thead>
+    <tbody style="height: 150px;">
+      <tr>
+        <th>Subject</th>
+        <th>Description</th>
+        <th>User Types</th>
+        <th>TechnologyUsed</th>
+      
+      </tr>
+      <tr>
+        <td id="a"></td>
+        <td id="b"></td>
+        <td id="c"></td>
+        <td id="d"></td>
+      
+      </tr>
+      </tbody>
+      
+    </table>
+    <div  style="position: relative; width:max-content; margin-left: 100px" >
+
+      <fieldset >
+        <legend><h2>Project info</h2></legend>
+
+      <label for="Subject">User name:</label><br><br>
+        <input id="Subject" type="text"> <br><br>
+
+      <label for="Description">Description:</label> <br><br>
+       <textarea name="" id="Description" cols="25" rows="5"></textarea><br><br>
+
+      <label for="UserTypes">User Types:</label> <br><br>
+       <textarea name="" id="UserTypes" cols="25" rows="5"></textarea><br><br>
+
+      <label for="TechnologyUsed">Technology Used:</label> <br><br>
+      <textarea name="" id="TechnologyUsed" cols="25" rows="5"></textarea><br><br>
+
+      <label for="img">Your image:</label><br><br>
+      <input type="file" id="img" name="img" accept="image/*"> <br><br>
+    
+       <input type="button" value="Submit" onclick="submit()">
+
+      </div>
+  </fieldset>
+
+    <script>
+      
+     
+      function submit()
+     {
+       document.getElementById("tab").style.display="block"
+
+       var Subject= document.getElementById("Subject").value;
+       sessionStorage.setItem("Subject",Subject);
+       document.getElementById("a").innerHTML=sessionStorage.getItem("Subject");
+
+
+       var Description= document.getElementById("Description").value;
+       sessionStorage.setItem("Description",Description);
+       document.getElementById("b").innerHTML=sessionStorage.getItem("Description");
+
+
+
+
+       var UserTypes= document.getElementById("UserTypes").value;
+       sessionStorage.setItem("UserTypes",UserTypes);
+       document.getElementById("c").innerHTML=sessionStorage.getItem("UserTypes");
+
+
+
+       var TechnologyUsed= document.getElementById("TechnologyUsed").value;
+       sessionStorage.setItem("TechnologyUsed",TechnologyUsed);
+       document.getElementById("d").innerHTML=sessionStorage.getItem("TechnologyUsed");
+
+
+
+
+      
+
+
+       var img= document.getElementById("img").value;
+       sessionStorage.setItem("image",img);
+       document.getElementById("pic").innerHTML=sessionStorage.getItem("image");
+
+
+
+
+    
+
+
+
+      }
+     
+
+    </script>
+</body>
+</html>

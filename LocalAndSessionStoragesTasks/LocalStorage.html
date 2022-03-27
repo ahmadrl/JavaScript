@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal data </title>
+
+</head>
+<body>
+
+  <table id="tab" border="1px" style="position: fixed; margin-left: 620px; display:none; "  align="center">
+    <thead>
+      <th style="width: max-content; height: 250px;" id="pic" colspan="9">
+      </th>
+    </thead>
+    <tbody style="height: 150px;">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Description</th>
+        <th>Major</th>
+        <th>University</th>
+        <th>Birth date</th>
+        <th>Programming languages</th>
+        <th>Refernce info</th>
+      </tr>
+      <tr>
+        <td id="a"></td>
+        <td id="b"></td>
+        <td id="c"></td>
+        <td id="d"></td>
+        <td id="e"></td>
+        <td id="f"></td>
+        <td id="g"></td>
+        <td id="h"> </td>
+        <td id="i"></td>
+      </tr>
+      </tbody>
+      
+    </table>
+    <div  style="position: relative; width:max-content; margin-left: 100px" >
+
+      <fieldset >
+        <legend><h2>personal info</h2></legend>
+
+      <label for="name">User name:</label>  <input id="name" type="text"> <br><br>
+
+      <label for="age">your age:</label>  <input value="" id="age" type="text"><br><br>
+
+      <label >gender:</label>
+
+      <input type="radio" id="male" name="gender" value="male">
+
+  <label for="male">Male</label>
+  <input  type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br> <br>
+
+      <label for="desc">Descripe your self:</label><br><br>
+       <textarea name="" id="desc" cols="25" rows="5"></textarea> <br><br>
+
+       <label for="major">Your major:</label>  <input id="major" type="text"><br><br>
+       <label for="Uni">University:</label>  <input id="Uni" type="text"><br><br>
+
+       <label for="date">Birth date:</label>  <input id="date" type="date"><br><br>
+
+       <label >Programming Language you prefer:</label> 
+
+      <input type="checkbox" id="p1" name="p1" value="JavaScript">
+      <label for="p1">JavaScript</label>
+      <input type="checkbox" id="p2" name="p2" value="Php">
+      <label for="p2">Php</label>
+      <input type="checkbox" id="p3" name="p3" value="C#">
+      <label for="vehicle3">C#</label> <br><br>
+
+      <label for="img">Your image:</label>
+      <input type="file" id="img" name="img" accept="image/*"> <br><br>
+
+      <label for="sbl">siblings number with a brief description of them:</label> <br><br>
+       <textarea name="" id="sbl" cols="25" rows="5"></textarea> <br><br>
+       <input type="button" value="Submit" onclick="submit()">
+
+      </div>
+  </fieldset>
+
+    <script>
+      
+      function radio() {
+             var arr=[];
+              var one = document.getElementById("male");
+              var two = document.getElementById("female");
+              if(one.checked)
+                arr.push(one.value);
+                else if(two.checked)arr.push(two.value);
+            
+               return arr;              
+               }
+              
+             
+      function getValueCheckBox() {
+             var arr=[]
+              var one = document.getElementById("p1")
+              if(one.checked){
+                arr.push(one.value);
+             }
+             var two = document.getElementById("p2")
+              if(two.checked){
+                arr.push(two.value);
+             }
+             var three = document.getElementById("p3")
+              if(three.checked){
+                arr.push(three.value);
+             }
+               if(arr.length>0){
+               return arr;              
+               }
+              else return " "
+             }
+      function submit()
+     {
+       document.getElementById("tab").style.display="block"
+
+       var name= document.getElementById("name").value;
+       document.getElementById("a").innerHTML=name;
+       localStorage.setItem("name",name);
+
+       var age= document.getElementById("age").value;
+       localStorage.setItem("age",age);
+       document.getElementById("b").innerHTML=localStorage.getItem("age");
+
+
+
+
+       var gender= radio() ;
+       localStorage.setItem("gender",gender);
+       document.getElementById("c").innerHTML=localStorage.getItem("gender");
+
+
+
+
+       var desc= document.getElementById("desc").value;
+
+       localStorage.setItem("description",desc);
+       document.getElementById("d").innerHTML=localStorage.getItem("description");
+
+
+
+
+       var major= document.getElementById("major").value;
+       localStorage.setItem("major",major);
+       document.getElementById("e").innerHTML=localStorage.getItem("major");
+
+
+
+
+       var univ= document.getElementById("Uni").value;
+       localStorage.setItem("university",univ);
+       document.getElementById("f").innerHTML=localStorage.getItem("university");
+
+
+
+
+       var date= document.getElementById("date").value;
+       localStorage.setItem("Birth date",date);
+       document.getElementById("g").innerHTML=localStorage.getItem("Birth date");
+
+
+
+
+       var lang=getValueCheckBox();
+       document.getElementById("h").innerHTML=lang;
+       localStorage.setItem("Programming languages",lang);
+
+
+       var img= document.getElementById("img").value;
+       localStorage.setItem("image",img);
+       document.getElementById("pic").innerHTML=localStorage.getItem("image");
+
+
+
+
+       var sbl= document.getElementById("sbl").value;
+       localStorage.setItem("reference info",sbl);
+       document.getElementById("i").innerHTML=localStorage.getItem("reference info");
+
+
+
+
+      }
+     
+
+    </script>
+</body>
+</html>
