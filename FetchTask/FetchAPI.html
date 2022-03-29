@@ -40,7 +40,7 @@
             let val = document.getElementById('char').value;
             for (let i = 0; i <= val.length; i++) {
                
-                document.getElementById('nickName').innerHTML += val[i];
+                document.getElementById('nickName').innerHTML += val[i].trim(" ");;
 
                 if (val[i] == " ") break;
                
