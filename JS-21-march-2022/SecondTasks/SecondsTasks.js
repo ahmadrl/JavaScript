@@ -111,7 +111,7 @@ Ex: subtract(5); => 5 - 4 - 3 - 2 - 1 - 0 => -5
                 n3--;
 
             }
-            return n2 * out;
+            return n1 * out;
         }
         alert('Task6: first number for mutiple by the second one ^ the third number is: 2' +
             'second number to be base is: 2' +
