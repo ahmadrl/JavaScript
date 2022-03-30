@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="position: relative; width:max-content; margin-left: 100px">
+
+        <fieldset>
+            <legend>
+                <h2>Registration form </h2>
+            </legend>
+
+            <label for="fName">first name:</label><br>
+             <input style="width: 250px;" placeholder="only letters" id="fName" type="text"> <br><br>
+            <label for="lName">last name:</label><br>
+             <input style="width: 250px;"  placeholder="only letters" value="" id="lName" type="text"><br><br>
+            <label for="date">birth date:</label><br>
+             <input  style="width: 250px;" placeholder="dd/mm/yyyy" value="" id="date" type="text"><br><br>
+            <label for="email">email with confirmation:</label><br>
+             <input style="width: 250px;" placeholder="ex@ex.ex"  value="" id="email" type="email"><br><br>
+            <label for="pass">password with confirmation:</label><br>
+             <input style="width: 250px;" placeholder="letters and numbers,at least 8 digits" value="" id="pass" type="text"><br><br>
+            <input type="button" value="check" onclick="check()">
+        </fieldset>
+    </div>
+
+    <script>
+        
+
+
+        function check(a) {
+
+           var a, b, c, d, e;
+
+            var fn=document.getElementById('fName').value;
+            var regFirstName =/^[a-zA-Z]+[^0-9](([',. -][a-zA-Z ])?[a-zA-Z]*)*$/g
+            if (fn.match(regFirstName)) { a = 'first name is correct' }
+            else { a = 'first name is not correct' }
+
+            
+            var ln=document.getElementById('lName').value;
+            var regLastName = /^[a-zA-Z]+[^0-9](([',. -][a-zA-Z ])?[a-zA-Z]*)*$/g
+            if (ln.match(regLastName)) { b = 'last name is correct' }
+            else { b = 'last name is not correct' }
+
+            var bd = document.getElementById('date').value;
+            var regDate = /^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}$/;
+            if (bd.match(regDate)) { c='date is correct' }
+            else { c='date is not correct' }
+
+            let em=document.getElementById('email').value;
+            let regEmail=/^[^\s@]+@[^\s@]+\.[^\s@]+/
+            if (em.match(regEmail)) { d = 'email is correct' }
+            else { d = 'email is not correct' }
+            
+
+            let pass=document.getElementById('pass').value;
+            let regPass=/^(?=.*?^[A-Z])(?=(.*[a-z]))(?=(.*[\d]){2,})(?=(.*[\W]){1,})(?!.*\s).{8,}$/
+            if (pass.match(regPass)) { e = 'password is correct' }
+            else { e = 'password is not correct' }
+
+            alert(a+"\n"+b+"\n"+ c+"\n"+d+"\n"+e);
+
+        }
+    </script>
+</body>
+
+</html>
