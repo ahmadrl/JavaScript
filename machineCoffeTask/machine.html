@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        #inp {
+            display: "none"
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset style="width:250px;">
+        <legend>Coffe Machine</legend>
+    <div>
+        <label for="milk">Milk</label> <input  name="ch" id="milk" type="radio" value="milk"> <br><br>
+        <label for="Coffe">Coffe</label> <input name="ch" id="Coffe" type="radio" value="coffe"><br><br>
+
+        <label for="Black">Black</label> <input name="ch" id="Black" type="radio" value="black"><br><br>
+        <input id="inp" type="text" placeholder="put the money" hidden> <br><br>
+        <input style="color: aliceblue; background-color: black;" type="button" value="submit" id="sub"> <br><br>
+        <img style="width: 150px;" src="out.jpg" alt="" id="img">
+        <div style="color:crimson" id="done"></div>
+    </fieldset>
+        <script>
+            var sub = document.getElementById('sub')
+            var inp= document.getElementById('inp');
+            var done=document.getElementById('done');
+            var img=document.getElementById('img');
+            var pic;
+            const radioButtons = document.querySelectorAll('input[name="ch"]');
+            for (const radioButton of radioButtons) {
+                radioButton.addEventListener('change', showSelected);
+               
+                
+            }
+            
+            function showSelected(e) {
+                if (this.checked) {
+                   inp.style.display = 'block';
+                   
+                }
+                for(i = 0; i < radioButtons.length; i++) {
+                if(radioButtons[i].checked==0)  {pic='OZcXV2tOPDcta2KyHfzztAunYjtRZ7U8wvDJs2rF.jpg'}
+                if(radioButtons[i].checked==1)  {pic='l-intro-1639519645.jpg'}
+                if(radioButtons[i].checked==2)  {pic='OZcXV2tOPDcta2KyHfzztAunYjtRZ7U8wvDJs2rF.jpg'}
+
+                }
+               
+               
+            }
+            sub.addEventListener('click',function(){
+                
+                switch(inp.value){
+                    case '1':done.innerHTML= 'good bye';
+                   img.src=pic
+                   break;
+                    case '5': done.innerHTML='4 JD...good bye'
+                    img.src=pic
+
+                    
+                    break;
+                    case '10': done.innerHTML='9 JD...good bye'
+                    img.src=pic
+
+                    break;
+                    case '20': done.innerHTML='19 JD...good bye'
+                    img.src=pic
+
+                    break;
+                    case '50': done.innerHTML='49 JD...good bye'
+                    img.src=pic
+
+                    break;
+                    default: done.innerHTML='please enter coins'
+
+
+
+                }
+            
+            });
+            
+        </script>
+
+
+
+
+    </div>
+</body>
+
+</html>
