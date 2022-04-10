@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" >
+
+</head>
+
+<body>
+    <div style="width: 300px; margin: 40px 50px;" class="container">
+        <select onchange="nickName(this)" class="form-control" id="char">
+            <option>please select</option>
+        </select>
+    </div>
+   <div style="margin: 40px 60px;" id="nickName">
+
+    </div>
+    <script>
+        async function loadData() {
+            const response = await fetch('https://www.breakingbadapi.com/api/characters');
+            const data = await response.json();
+            for (let i = 0; i < data.length; i++) {
+                document.getElementById('char').innerHTML += "<option>" + data[i].name + "<option>";
+
+            }
+           
+
+        }
+        loadData();
+        async function nickName() {
+        var nickName = '';
+        const response = await fetch('https://www.breakingbadapi.com/api/characters');
+        const data = await response.json();
+        for (let index = 0; index < data.length; index++) {
+          if (document.getElementById('char').value == data[index].name) {
+            nickName = data[index].nickname;
+          }
+        }
+        document.getElementById('nickName').innerHTML = nickName;
+      }
+       /* function nickName() {
+            const response = await fetch('https://www.breakingbadapi.com/api/characters');
+            const data = await response.json();
+            if(document.getElementById('nickName').innerHTML!=null)
+                {
+                    document.getElementById('nickName').innerHTML=" "
+
+                }
+            let val = document.getElementById('char').value;
+            for (let i = 0; i <= val.length; i++) {
+               
+                document.getElementById('nickName').innerHTML += val[i].nickname.trim(" ");;
+
+                if (val[i] == " ") break;
+               
+            }
+
+        }*/
+    </script>
+
+
+</body>
+
+</html>
